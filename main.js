@@ -1,12 +1,10 @@
 function greet() {
-	console.log("Hello World");
+  console.log("Hello World");
 }
 
 function add(a, b) {
-	return   a+
-b;
+  return a + b;
 }
 
-let name = "John"  ;
-let age =30;
-
+let name = "John";
+let age = 30;
