@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [ main ]
 
-env:
-  GITHUB_TOKEN: ${{ secrets.ACTION_FORMAT_TOKEN }}
-
 jobs:
   format:
     runs-on: ubuntu-latest
@@ -26,9 +23,4 @@ jobs:
         run: npm install prettier
       - name: Format code
         run: npx prettier --write .
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Auto-format code"
-          commit_user_name: "github-actions[bot]"
-          commit_user_email: "github-actions[bot]@users.noreply.github.com"
-          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+      - uses: stefanzweifel/git-auto-commit-action@v5
