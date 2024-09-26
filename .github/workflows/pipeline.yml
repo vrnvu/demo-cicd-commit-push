@@ -6,19 +6,16 @@ on:
   pull_request:
     branches: [ main ]
 
-permissions:
-  contents: write
-  pull-requests: write
-  actions: write
-
-
 jobs:
   format:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
